@@ -13,7 +13,6 @@ import { AuthService } from '../service/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-//export class TokenInterceptorService {
 export class TokenInterceptor implements HttpInterceptor {
   isRefreshingToken = false;
   tokenSubject: BehaviorSubject<string | null> = new BehaviorSubject<

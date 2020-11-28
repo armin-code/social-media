@@ -1,8 +1,8 @@
 $grid-breakpoints: (
-  sm: 599px,
-  md: 959px,
-  lg: 1279px,
-  xl: 1499px
+  sm: 375px,
+  md: 768px,
+  lg: 1240px,
+  xl: 1400px
 ) !default;
 
 @mixin breakpoint-down($name, $breakpoints: $grid-breakpoints) {

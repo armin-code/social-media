@@ -46,6 +46,10 @@ export class AuthService {
     return JSON.parse(localStorage.getItem(USER));
   }
 
+  getCurrentUserId(): string {
+    return JSON.parse(localStorage.getItem(USER)).id;
+  }
+
   isAuthenticated(): boolean {
     if (this.getToken()) {
       return true;

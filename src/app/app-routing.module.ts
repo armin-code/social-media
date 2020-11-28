@@ -11,12 +11,20 @@ const childrenRoutes: Routes = [
         m => m.HomeModule
       ),
       canActivate: [AuthGuard]
-  },
+  }
 
 
 ];
 
 export const routes: Routes = [
+  {
+    path: 'select-influencers',
+    loadChildren: () =>
+      import('./modules/select-influencer/select-influencer.module').then(
+        m => m.SelectInfluencerModule
+      ),
+      canActivate: [AuthGuard]
+  },
   {
     path: 'sign-in',
     loadChildren: () =>

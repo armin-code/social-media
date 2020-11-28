@@ -16,8 +16,6 @@ import { AuthService } from './../../../core/service/auth.service';
 })
 export class SignInComponent implements OnInit {
   formGroup: FormGroup;
-  username: string;
-  password: string;
   isLoading: boolean;
   hide: boolean = true;
   isInfluencer = false;
@@ -57,6 +55,10 @@ export class SignInComponent implements OnInit {
         data => {
           this.isLoading = false;
           this.authService.setSession(data);
+          if (!data.user.isInfluencer && !data.user.hasSelectedInfluencers) {
+            this.router.navigate(['select-influencers'], { replaceUrl: true });
+            return;
+          }
           this.router.navigate([''], { replaceUrl: true });
         },
         () => {

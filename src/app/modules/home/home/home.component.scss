@@ -1,0 +1,73 @@
+@import '~src/assets/scss/variables';
+
+.main-content {
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+.posts {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  .user-image {
+    height: 24px;
+    width: 24px;
+  }
+  border-top: 1px solid $light-primary-text;
+}
+
+.main-content {
+  border-radius: 10px;
+  width: 500px;
+}
+
+.user-data {
+  padding: 3px;
+}
+
+.posts-icons {
+  cursor: pointer;
+  color: $gray;
+  &:hover {
+    color: $primary;
+  }
+}
+.posts-social-data {
+  position: relative;
+  bottom: 8px;
+  left: 10px;
+  color: $gray;
+}
+
+.load-more-btn {
+  background-color: $green;
+  border-radius: 10px;
+  color: white;
+}
+
+.new-post {
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+  width: 500px;
+
+  .data {
+    background-color: $gray;
+    margin: 0 20px;
+  }
+
+  .image-upload > input {
+    display: none;
+  }
+
+  .image-upload img {
+    width: 20px;
+    margin: 10px 0 0 0;
+    cursor: pointer;
+  }
+  input {
+    border: 0;
+    background-color: $gray;
+    width: 90%;
+  }
+}

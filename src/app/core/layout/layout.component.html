@@ -1,8 +1,10 @@
 <div class="app-layout-wrapper">
   <mat-sidenav-container class="app-sidenav-container">
     <mat-sidenav class="app-sidenav" mode="side" opened>
-      <div fxLayoutAlign="center center"></div>
       <mat-nav-list>
+        <div fxLayout="column" fxLayoutAlign="center start" class="mtb-20">
+          <img src="./assets/images/randomly.png" alt="randomly" />
+        </div>
         <mat-list-item
           [routerLink]="['/']"
           [routerLinkActive]="['active-link']"
@@ -14,7 +16,7 @@
           </span>
           <span class="nav-title">Home</span>
         </mat-list-item>
-        <mat-list-item  class="nav-item">
+        <mat-list-item class="nav-item">
           <span class="material-icons">
             notifications
           </span>
@@ -27,9 +29,7 @@
           </span>
           <span class="nav-title">Messages</span>
         </mat-list-item>
-        <mat-list-item
-          class="nav-item"
-        >
+        <mat-list-item class="nav-item">
           <span class="material-icons">
             person_outline
           </span>

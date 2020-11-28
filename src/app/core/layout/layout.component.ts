@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -6,13 +7,12 @@ import { AuthService } from '../service/auth.service';
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })
-export class LayoutComponent implements OnInit {
-  constructor(private authService: AuthService) {}
-  ngOnInit() {
-    console.log(
-      this.authService.isRegularUser(),
-      this.authService.isInfluencer()
-    );
+export class LayoutComponent {
+  constructor(private authService: AuthService, private router: Router) {
+    const user = this.authService.getCurrentUser();
+    if (!user.isInfluencer && !user.hasSelectedInfluencers) {
+      this.router.navigate(['select-influencers'], { replaceUrl: true });
+    }
   }
 
   logout(): void {

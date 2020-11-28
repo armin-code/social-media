@@ -1,1 +1,106 @@
-<p>home works!</p>
+<div class="posts-container" fxLayout="column" fxLayoutAlign="center center">
+  <form
+    [formGroup]="formGroup"
+    (ngSubmit)="savePost()"
+    fxLayout="row"
+    class="new-post mtb-10"
+  >
+    <img class="user-image" src="./assets/images/post-user.png" alt="" />
+    <div fxFlex="90" fxLayout="row" class="data">
+      <input type="text" formControlName="text" placeholder="What's going on" />
+      <div class="image-upload">
+        <label for="file-input">
+          <img src="./assets/images/file.png" alt="file" />
+        </label>
+
+        <input id="file-input" type="file" />
+      </div>
+    </div>
+
+    <button
+      fxFlex="10"
+      class=" post"
+      type="submit"
+      color="primary"
+      mat-raised-button
+      [disabled]="formGroup.invalid"
+    >
+      Post
+    </button>
+  </form>
+
+  <div class="main-content" fxLayout="column" fxLayoutAlign="center center">
+    <h2>Home</h2>
+
+    <div *ngIf="data?.results">
+      <div class="posts" *ngFor="let post of data?.results">
+        <div fxLayout="row">
+          <div fxLayout="row" fxFlex="75">
+            <img
+              class="user-image"
+              src="./assets/images/post-user.png"
+              alt=""
+            />
+            <p class="user-data">
+              {{ post?.user?.firstName + ' ' + post?.user?.lastName }}
+            </p>
+            <p class="user-data">
+              <i>{{ post?.user?.username }}</i>
+            </p>
+          </div>
+
+          <p fxFlex class="text-right">{{ post.createdOn }}</p>
+        </div>
+        <p>{{ post.text }}</p>
+        <div fxLayout="column" *ngIf="post.image" class="post-image">
+          <img [src]="post.image" alt="" />
+          <p></p>
+        </div>
+        <div fxLayout="row">
+          <p fxFlex="33">
+            <span
+              *ngIf="post.isLikedByUser"
+              class="material-icons posts-icons primary-text"
+            >
+              favorite
+            </span>
+
+            <span
+              *ngIf="!post.isLikedByUser"
+              class="material-icons posts-icons"
+            >
+              favorite_border
+            </span>
+
+            <span class="posts-social-data">{{ post.likesCount }}</span>
+          </p>
+          <p fxFlex="33">
+            <span class="material-icons posts-icons">
+              comment_bank
+            </span>
+            <span class="posts-social-data">{{ post.commentsCount }}</span>
+          </p>
+          <p fxFlex="33">
+            <span
+              class="material-icons posts-icons"
+              [ngClass]="{ 'primary-text': post.isShare }"
+            >
+              share
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  
+    <div fxLayout *ngIf="data?.results">
+      <button
+        class="load-more-btn mtb-10"
+        (click)="loadMore()"
+        [disabled]="!data?.next"
+        mat-raised-button
+      >
+        Load more posts
+      </button>
+    </div>
+  </div>
+</div>

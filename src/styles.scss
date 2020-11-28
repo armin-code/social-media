@@ -50,12 +50,19 @@ body {
   margin-top: 40px;
 }
 
-.mtp-10 {
+.mtb-10 {
   margin: 10px 0;
+}
+
+.mtb-20 {
+  margin: 20px 0;
 }
 
 .text-center {
   text-align: center;
+}
+.text-right {
+  text-align: right;
 }
 
 .spinner-container {
@@ -65,4 +72,8 @@ body {
     width: 30px !important;
     height: 30px !important;
   }
+}
+
+.mat-drawer-side {
+  border-right: 0;
 }
