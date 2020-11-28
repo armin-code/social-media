@@ -1,0 +1,68 @@
+@import 'src/assets/scss/variables.scss';
+
+body {
+  background-color: $background;
+  margin: 0;
+}
+.login-container {
+  display: flex;
+  height: 100vh;
+  padding: 0;
+  border-radius: 0;
+  overflow: hidden;
+  .sing-img {
+    height: 100vh;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+.sign-form-container {
+  .sign-form {
+    padding: 20px 40px;
+    width: 476px;
+    background-color: white;
+  }
+}
+
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+  border-radius: 20px;
+  border: 0;
+}
+
+.primary-text {
+  color: $primary;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mtp-10 {
+  margin: 10px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.spinner-container {
+  width: 30px !important;
+  height: 30px !important;
+  svg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}

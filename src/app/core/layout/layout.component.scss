@@ -1,0 +1,112 @@
+@import '~src/assets/scss/variables';
+@import '~src/assets/scss/breakpoints';
+
+.app-layout-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.app-sidenav-container {
+  background-color: $background;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.app-sidenav {
+  width: 255px;
+  background-color:  $background;
+  @include breakpoint-down(xl) {
+    width: 220px;
+  }
+  @include breakpoint-down(lg) {
+    width: 180px;
+  }
+  @include breakpoint-down(md) {
+    width: 60px;
+    span {
+      display: none;
+    }
+    .nav-item {
+      width: 60px;
+    }
+  }
+}
+
+.nav-title {
+  padding: 10px;
+}
+
+.mat-list-base {
+  position: fixed;
+  @include breakpoint-down(xl) {
+    width: 220px;
+  }
+  @include breakpoint-down(lg) {
+    width: 180px;
+  }
+
+  .mat-list-item {
+    border-radius: 6px;
+    height: 40px;
+    margin-bottom: 18px;
+
+    .item-icon {
+      display: flex;
+      align-items: center;
+      width: 30px;
+      margin: 0 1.2rem;
+      @include breakpoint-down(xl) {
+        margin: 0 12px;
+      }
+      @include breakpoint-down(lg) {
+        margin-left: 0;
+        margin-right: 4px;
+
+        img {
+          width: 20px;
+        }
+      }
+    }
+
+    .menu-arrow {
+      margin-left: auto;
+      margin-right: 5px;
+    }
+  }
+}
+
+.active-link {
+  color: #1A202C;
+  box-shadow: 0 8px 16px #00000066;
+  transition: margin-left 0.3s ease-out;
+}
+
+.back-icon {
+  cursor: pointer;
+  margin: 4px 8px 0 0;
+}
+
+.app-container {
+  width: 1170px;
+  margin: auto;
+  padding: 30px 0;
+  color: $light-primary-text;
+
+  @include breakpoint-down(xl) {
+    width: 980px;
+  }
+  @include breakpoint-down(lg) {
+    width: 750px;
+  }
+  @include breakpoint-down(md) {
+    width: 630px;
+  }
+}
+
+
+.logout-link {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,52 @@
+<div class="app-layout-wrapper">
+  <mat-sidenav-container class="app-sidenav-container">
+    <mat-sidenav class="app-sidenav" mode="side" opened>
+      <div fxLayoutAlign="center center"></div>
+      <mat-nav-list>
+        <mat-list-item
+          [routerLink]="['/']"
+          [routerLinkActive]="['active-link']"
+          #rla="routerLinkActive"
+          class="nav-item"
+        >
+          <span class="material-icons">
+            home
+          </span>
+          <span class="nav-title">Home</span>
+        </mat-list-item>
+        <mat-list-item  class="nav-item">
+          <span class="material-icons">
+            notifications
+          </span>
+          <span class="nav-title">Notifications</span>
+        </mat-list-item>
+
+        <mat-list-item class="nav-item">
+          <span class="material-icons">
+            message
+          </span>
+          <span class="nav-title">Messages</span>
+        </mat-list-item>
+        <mat-list-item
+          class="nav-item"
+        >
+          <span class="material-icons">
+            person_outline
+          </span>
+          <span class="nav-title">Profile</span>
+        </mat-list-item>
+        <mat-list-item (click)="logout()" class="nav-item">
+          <span class="material-icons logout-link">
+            login
+          </span>
+          <span class="nav-title">Log out</span>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="app-container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

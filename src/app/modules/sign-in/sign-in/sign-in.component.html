@@ -1,0 +1,79 @@
+<div fxLayout="row" class="login-container">
+  <div flex="20">
+    <img class="sing-img" src="./assets/images/sign.png" alt="start" />
+  </div>
+
+  <div
+    flex="80"
+    fxLayout="column"
+    fxLayoutAlign="start center"
+    class="w-100 sign-form-container"
+  >
+    <div fxLayout="column" fxLayoutAlign="center center" class="mt-40">
+      <img src="./assets/images/randomly.png" alt="randomly" />
+      <h2>Randomly</h2>
+    </div>
+    <div class="w-100 sign-form mt-20">
+      <div *ngIf="isInfluencer">
+        <p class="text-center">Tadaaaa!</p>
+        <p class="text-center">
+          Your role is <strong class="primary-text">Influencer</strong>
+        </p>
+        <hr class="mt-40" />
+      </div>
+      <h2 fxLayout="column" fxLayoutAlign="center center">Sign In</h2>
+      <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-data">
+        <div fxLayout="column">
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Username"
+              formControlName="username"
+              name="username"
+              required
+            />
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Password"
+              formControlName="password"
+              [type]="hide ? 'password' : 'text'"
+              name="password"
+              required
+            />
+
+            <mat-icon matSuffix (click)="showPassword()">{{
+              hide ? 'visibility_off' : 'visibility'
+            }}</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="mt-20" fxLayout="column" fxLayoutAlign="center center">
+          <mat-spinner
+            *ngIf="isLoading"
+            class="spinner-container"
+          ></mat-spinner>
+          <button
+            *ngIf="!isLoading"
+            class="w-100"
+            mat-stroked-button
+            type="submit"
+            color="primary"
+            mat-raised-button
+            [disabled]="formGroup.invalid"
+          >
+            Sign In
+          </button>
+        </div>
+      </form>
+      <hr class="mt-40" />
+      <p class="text-center mt-40">
+        Don't have an account?
+        <a class="primary-text" [routerLink]="['/create-account']"
+          >Create account</a
+        >
+      </p>
+    </div>
+  </div>
+</div>

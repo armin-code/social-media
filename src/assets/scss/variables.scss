@@ -1,0 +1,59 @@
+@import '~@angular/material/theming';
+
+
+// Material typography
+$app-typography: mat-typography-config(
+  $font-family: 'Open Sans Regular, Geneva, sans-serif'
+);
+@include mat-core($app-typography);
+
+// Text colors
+$dark-primary-text: #000000;
+$light-primary-text: #b1b1b1;
+
+// Material color palette
+$app-colors: (
+  50: #f3effc,
+  100: #e2d7f9,
+  200: #cfbdf5,
+  300: #bca2f0,
+  400: #ad8eed,
+  500: #9f7aea,
+  600: #9772e7,
+  700: #8d67e4,
+  800: #835de1,
+  900: #724adb,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #dbceff,
+  A700: #c8b4ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff
+  )
+);
+
+// Copy the palettes from your selected theme (app-theme.scss).
+$app-primary: mat-palette($app-colors);
+$app-accent: mat-palette($app-colors, A200, A100, A400);
+$app-warn: mat-palette($mat-red);
+
+// Create your Sass color vars (will be available in all the project)
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+
+$background: #EDF2F7;
+$shadow-color: #00000067;
